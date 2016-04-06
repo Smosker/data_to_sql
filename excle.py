@@ -68,10 +68,7 @@ class Application(Frame):
         self.clipboard_clear()
 
         if len(self.changed_data) <= 1000:
-            print(self.values.get(0.0,END))
             self.clipboard_append(result)
-            print(self.clipboard_get())
-
 
         else:
             first_thousand = ''.join(self.changed_data[:1000])[:-2]
@@ -96,14 +93,13 @@ class Application(Frame):
     def delete(self):
         """
         Используется для приведения приложения в изначальное состояние
-        удаляет все дополнительные данные, очищает вход/выход
+        удаляет все дополнительные кнопки, очищает вход/выход
         """
         self.exit.delete(0.0, END)
         self.values.delete(0.0, END)
         self.changed_data = []
         for i in self.buttons_to_delete:
             i.destroy()
-
 
 
 root.geometry('620x800')
