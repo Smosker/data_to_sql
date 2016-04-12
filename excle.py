@@ -101,9 +101,9 @@ class Application(Frame):
         for i in self.buttons_to_delete:
             i.destroy()
 
-
-root.geometry('620x800')
-app = Application(root)
-root.mainloop()
+if __name__ == '__main__':
+    root.geometry('620x800')
+    app = Application(root)
+    root.mainloop()
 
 
