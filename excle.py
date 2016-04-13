@@ -31,9 +31,9 @@ class Application(Frame):
     def create_widgets(self):
 
         Label(self.frame, text='Помести значения в поле ниже',
-              font=("Helvetica", 20) ).grid(row = 0, column = 0, sticky = W)
+              font=("Helvetica", 20)).grid(row = 0, column = 0, sticky = W)
 
-        self.values = Text(self.frame,width=25,height=22, font=("Helvetica", 20),
+        self.values = Text(self.frame, width=25, height=22, font=("Helvetica", 20),
                            highlightbackground = 'black')
         self.values.grid(row=1, column=0)
 
@@ -45,7 +45,7 @@ class Application(Frame):
         self.bttn2 = Button(self.frame,text='Очистить', command=self.delete, font=("Helvetica", 20))
         self.bttn2.grid(row=3, column=0)
 
-        self.exit = Text(self.frame,width=25, height=22,font=("Helvetica", 20),
+        self.exit = Text(self.frame, width=25, height=22, font=("Helvetica", 20),
                          highlightbackground='black')
         self.exit.grid(row=1, column=1)
 
@@ -57,9 +57,9 @@ class Application(Frame):
         и выводит отдельные кнопки для копирования каждой 1000 строк преобразованных
         данных.
         входные данные - 123 123 123
-        выходные данные - '123', '123', '123'
+        выходные данные - '123',\n'123',\n'123'
         """
-        values = self.values.get(0.0,END).split()
+        values = self.values.get(0.0, END).split()
         self.exit.delete(0.0, END)
         self.changed_data.clear()
         self.changed_data = ["'" + i + "',\n" for i in values]

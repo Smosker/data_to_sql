@@ -27,10 +27,14 @@ class MainTest(unittest.TestCase):
         Проверка на корректность разбиения данных на массивы
         по 1000 значений
         """
-        self.values = '123 '* 1200
+        self.values = '123 ' * 2200
         self.program.values.insert(0.0, self.values)
         self.program.change_and_copy()
 
         self.assertEqual(len(self.program.clipboard_get().split()), 1000)
+        self.program.copy_next_thousand(0)
+        self.assertEqual(len(self.program.clipboard_get().split()), 1000)
+        self.program.copy_next_thousand(1)
+        self.assertEqual(len(self.program.clipboard_get().split()), 200)
 
 
