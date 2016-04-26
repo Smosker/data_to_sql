@@ -102,7 +102,7 @@ class Application(Frame):
             i.destroy()
 
 if __name__ == '__main__':
-    root.geometry('620x800')
+    root.geometry('620x700')
     app = Application(root)
     root.mainloop()
 
