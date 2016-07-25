@@ -37,4 +37,7 @@ class MainTest(unittest.TestCase):
         self.program.copy_next_thousand(1)
         self.assertEqual(len(self.program.clipboard_get().split()), 200)
 
+if __name__ == '__main__':
+    unittest.main()
+
 
